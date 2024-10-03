@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+        <img src="C:\Users\marcel.burek\Plan_treningowy\pythonProject\templates\just1.jpg" style="display: block; margin: 0 auto; width: 100px; height: auto;">
+    <title>Twój Plan Treningowy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f4f4f4; font-family: 'Arial', sans-serif; }
+        .container { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        h1, h2 { color: #333; }
+        .form-group { margin-bottom: 15px; }
+        .tooltip { background-color: #eee; border: 1px solid #ccc; padding: 5px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Twój Plan Treningowy</h1>
+    <form method="post" action="/" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="age">Wiek:</label>
+            <input type="number" class="form-control" id="age" name="age" required><br>
+           
+
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Płeć:</label>
+            <select class="form-control" id="gender" name="gender">
+                <option value="male">Mężczyzna</option>
+                <option value="female">Kobieta</option>
+            </select><br>
+        </div>
+
+        <div class="form-group">
+            <label for="fitness_level">Poziom sprawności:</label>
+            <select class="form-control" id="fitness_level" name="fitness_level">
+                <option value="beginner">Początkujący</option>
+                <option value="intermediate">Średniozaawansowany</option>
+                <option value="advanced">Zaawansowany</option>
+            </select><br>
+        </div>
+
+        <div class="form-group">
+            <label for="goals">Cele:</label>
+            <select class="form-control" id="goals" name="goals">
+                <option value="weight_loss">Utrata wagi</option>
+                <option value="muscle_gain">Budowanie mięśni</option>
+                <option value="endurance">Poprawa wytrzymałości</option>
+            </select><br>
+        </div>
+
+        <div class="form-group">
+            <label for="equipment">Dostępny sprzęt:</label>
+            <select class="form-control" id="equipment" name="equipment">
+                <option value="none">Ćwiczenia z własną masą ciała</option>
+                <option value="full">Ćwiczenia na siłowni</option>
+            </select><br>
+        </div>
+
+        <div class="form-group">
+            <label for="availability">Dostępność czasowa:</label>
+            <select class="form-control" id="availability" name="availability">
+                <option value="none">Brak</option>
+                <option value="limited">Ograniczony</option>
+                <option value="full">Duża dostępność</option>
+            </select><br>
+        </div>
+
+        <div class="form-group">
+            <label for="health_limitations">Ograniczenia zdrowotne:</label>
+            <select class="form-control" id="health_limitations" name="health_limitations" onchange="showHealthLimitationOptions()">
+                <option value="none">Żadne</option>
+                <option value="full">Tak</option>
+            </select>
+            <div id="health_details" style="display:none;">
+                <label for="details">Szczegóły:</label>
+                <textarea class="form-control" id="details" name="details"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Utwórz plan</button>
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    function showHealthLimitationOptions() {
+        var selection = document.getElementById('health_limitations').value;
+        var details = document.getElementById('health_details');
+        if (selection === 'full') {
+            details.style.display = 'block';
+        } else {
+            details.style.display = 'none';
+        }
+    }
+
+    // Funkcja do pobierania cytatów motywacyjnych
+    async function fetchMotivationalQuote() {
+        const response = await fetch('https://api.quotable.io/random?tags=fitness');
+        const data = await response.json();
+        document.getElementById('motivational-quote').innerText = data.content;
+    }
+
+    // Wywołanie funkcji przy załadowaniu strony
+    window.onload = function() {
+        fetchMotivationalQuote();
+    };
+</script>
+</body>
+</html>

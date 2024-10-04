@@ -4,6 +4,7 @@ from extensions import db
 from models import User
 
 
+
 #app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'  # Miejsce Twojej bazy danych
 #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -231,3 +232,7 @@ def generate_training_plan(user):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run()
+

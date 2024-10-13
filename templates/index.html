@@ -2,11 +2,13 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-        <img src="C:\Users\marcel.burek\Plan_treningowy\pythonProject\templates\just1.jpg" style="display: block; margin: 0 auto; width: 100px; height: auto;">
-    <title>Twój Plan Treningowy</title>
+
+    <title>Twój Plan Treningowy</title>  </center>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        body { background-color: #f4f4f4; font-family: 'Arial', sans-serif; }
+        body {
+	 font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e4ecfa, #cfd9e6);
         .container { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; }
         h1, h2 { color: #333; }
         .form-group { margin-bottom: 15px; }
@@ -15,63 +17,63 @@
 </head>
 <body>
 <div class="container">
-    <h1>Twój Plan Treningowy</h1>
+    <h1><center>Twój Plan Treningowy</center></h1>
     <form method="post" action="/" class="needs-validation" novalidate>
         <div class="form-group">
             <label for="age">Wiek:</label>
             <input type="number" class="form-control" id="age" name="age" required><br>
-           
+
 
         </div>
 
         <div class="form-group">
             <label for="gender">Płeć:</label>
             <select class="form-control" id="gender" name="gender">
-                <option value="male">Mężczyzna</option>
-                <option value="female">Kobieta</option>
+                <option value="male">Mężczyzna👨</option>
+                <option value="female">Kobieta👩</option>
             </select><br>
         </div>
 
         <div class="form-group">
             <label for="fitness_level">Poziom sprawności:</label>
             <select class="form-control" id="fitness_level" name="fitness_level">
-                <option value="beginner">Początkujący</option>
-                <option value="intermediate">Średniozaawansowany</option>
-                <option value="advanced">Zaawansowany</option>
+                <option value="beginner">Początkujący🏋️‍♂️</option>
+                <option value="intermediate">Średniozaawansowany🤸</option>
+                <option value="advanced">Zaawansowany💪</option>
             </select><br>
         </div>
 
         <div class="form-group">
             <label for="goals">Cele:</label>
             <select class="form-control" id="goals" name="goals">
-                <option value="weight_loss">Utrata wagi</option>
-                <option value="muscle_gain">Budowanie mięśni</option>
-                <option value="endurance">Poprawa wytrzymałości</option>
+                <option value="weight_loss">Utrata wagi🍏</option>
+                <option value="muscle_gain">Budowanie mięśni💪</option>
+                <option value="endurance">Poprawa wytrzymałości🏃</option>
             </select><br>
         </div>
 
         <div class="form-group">
             <label for="equipment">Dostępny sprzęt:</label>
             <select class="form-control" id="equipment" name="equipment">
-                <option value="none">Ćwiczenia z własną masą ciała</option>
-                <option value="full">Ćwiczenia na siłowni</option>
+                <option value="none">Ćwiczenia z własną masą ciała🤸</option>
+                <option value="full">Ćwiczenia na siłowni🏋️</option>
             </select><br>
         </div>
 
         <div class="form-group">
             <label for="availability">Dostępność czasowa:</label>
             <select class="form-control" id="availability" name="availability">
-                <option value="none">Brak</option>
-                <option value="limited">Ograniczony</option>
-                <option value="full">Duża dostępność</option>
+                <option value="none">Brak🚫🕒</option>
+                <option value="limited">Ograniczony⏳</option>
+                <option value="full">Duża dostępność🕒</option>
             </select><br>
         </div>
 
         <div class="form-group">
             <label for="health_limitations">Ograniczenia zdrowotne:</label>
             <select class="form-control" id="health_limitations" name="health_limitations" onchange="showHealthLimitationOptions()">
-                <option value="none">Żadne</option>
-                <option value="full">Tak</option>
+                <option value="none">Żadne💪</option>
+                <option value="full">Tak⚠️option>
             </select>
             <div id="health_details" style="display:none;">
                 <label for="details">Szczegóły:</label>
